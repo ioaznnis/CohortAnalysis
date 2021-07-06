@@ -28,7 +28,7 @@ from
   ,(SELECT IIF(COUNT(O.DateAdded) = 0 , 0, 1) FROM Orders O WHERE O.DateAdded = DATEADD(MONTH, 9, Clients.CreatedAt) AND O.PhoneNumber = Clients.PhoneNumber) AS  m9
   ,(SELECT IIF(COUNT(O.DateAdded) = 0 , 0, 1) FROM Orders O WHERE O.DateAdded = DATEADD(MONTH, 10, Clients.CreatedAt) AND O.PhoneNumber = Clients.PhoneNumber) AS m10
   ,(SELECT IIF(COUNT(O.DateAdded) = 0 , 0, 1) FROM Orders O WHERE O.DateAdded = DATEADD(MONTH, 11, Clients.CreatedAt) AND O.PhoneNumber = Clients.PhoneNumber) AS m11
-FROM (select                                                                                                                                                       12
+FROM (select
           PhoneNumber, 
           min(DateAdded) CreatedAt
     from Orders
